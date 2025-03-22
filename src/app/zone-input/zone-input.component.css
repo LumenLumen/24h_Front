@@ -14,4 +14,5 @@ div {
     background-color: var(--blanc);
     border-radius: 10px;
     border: 2px solid var(--marron);
+    padding-bottom: 10px;
 }

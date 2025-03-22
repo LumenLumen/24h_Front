@@ -5,3 +5,23 @@
     width: 100%;
 
 }
+
+#scrollable {
+    overflow-y: scroll;  /* Permet de défiler verticalement */
+    max-height: 620px;
+    display: flex;
+    flex-direction: column;  /* Les messages vont se disposer verticalement */
+    padding: 10px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;  /* Empile les éléments verticalement */
+    align-items: flex-end;   /* Aligne les éléments à droite */
+}
+
+#droite {
+    width: fit-content;
+    max-width: 900px;
+    margin-right: 0;
+}

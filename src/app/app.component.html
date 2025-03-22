@@ -1,8 +1,9 @@
-<div id="scrollable">
+<div id="scrollable" #scrollable>
   <div *ngFor="let message of listeMessage">
     <app-agent-dialog-line *ngIf="!message[1]" texte={{message[0]}}></app-agent-dialog-line>
-    <div id="gauche">
-      <app-bulle *ngIf="message[1]" texte={{message[0]}}></app-bulle>
+    
+    <div id="container">
+      <app-bulle id="droite" *ngIf="message[1]" texte={{message[0]}}></app-bulle>
     </div>
   </div>
 </div>
