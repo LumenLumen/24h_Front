@@ -17,5 +17,6 @@ export class ZoneInputComponent {
     if (form.valid) {
       this.outputData.emit(form.value);
     }
+    form.reset();
   }
 }
