@@ -1,5 +1,5 @@
 <div *ngFor="let message of listeMessage">
-  <app-agent-dialog-line *ngIf="!message[1]" texte={{message[0]}}></app-agent-dialog-line>
+  <app-agent-dialog-line *ngIf="!message[1]" texte={{message[0]}} emotion="CRY"></app-agent-dialog-line>
   <app-bulle *ngIf="message[1]" texte={{message[0]}}></app-bulle>
 </div>
 
