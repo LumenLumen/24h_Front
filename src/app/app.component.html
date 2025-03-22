@@ -1,5 +1,8 @@
-<app-agent-dialog-line texte="Bonjour, je suis Epp, votre agent réceptionniste. Que puis-je faire pour vous ?"></app-agent-dialog-line>
+<div *ngFor="let message of listeMessage">
+  <app-agent-dialog-line *ngIf="!message[1]" texte={{message[0]}}></app-agent-dialog-line>
+  <app-bulle *ngIf="message[1]" texte={{message[0]}}></app-bulle>
+</div>
 
-<div><app-zone-input></app-zone-input></div>
+<div id="input"><app-zone-input (outputData)="myOuputData($event)"></app-zone-input></div>
 
 <router-outlet></router-outlet>

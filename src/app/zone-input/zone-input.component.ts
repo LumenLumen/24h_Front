@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 
 
@@ -11,10 +11,11 @@ import { NgForm, FormsModule } from '@angular/forms';
 })
 export class ZoneInputComponent {
 
-
+  @Output() outputData: EventEmitter<string> = new EventEmitter();
+  
   onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log(form.value);
+      this.outputData.emit(form.value);
     }
   }
 }
