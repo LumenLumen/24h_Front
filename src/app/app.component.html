@@ -1,11 +1,8 @@
+<div *ngFor="let message of listeMessage">
+  <app-agent-dialog-line *ngIf="!message[1]" texte={{message[0]}}></app-agent-dialog-line>
+  <app-bulle *ngIf="message[1]" texte={{message[0]}}></app-bulle>
+</div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div id="input"><app-zone-input (outputData)="myOuputData($event)"></app-zone-input></div>
 
-
-<router-outlet />
+<router-outlet></router-outlet>

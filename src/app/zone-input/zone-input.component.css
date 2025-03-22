@@ -1,0 +1,17 @@
+p {
+    position: relative;
+    bottom: -10px;
+    color: var(--marron-fonce);
+}
+
+input {
+    border-radius: 50px;
+    width: 98%;
+    min-height: 30px;
+}
+
+div {
+    background-color: var(--blanc);
+    border-radius: 10px;
+    border: 2px solid var(--marron);
+}
