@@ -1,0 +1,6 @@
+<div>
+    <p>Tapez votre réponse ici : </p>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <input type="text" name="texte" ngModel required>
+    </form>
+</div>

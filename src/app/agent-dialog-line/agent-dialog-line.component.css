@@ -1,0 +1,17 @@
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+table {
+    width:100%;
+}
+
+#agent {
+    width: 200px;
+}
+
+#texte {
+    position : relative ;
+    bottom: 150px;
+}
