@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AgentDialogLineComponent } from './agent-dialog-line/agent-dialog-line.component';
 import { ZoneInputComponent } from "./zone-input/zone-input.component";
@@ -12,9 +12,10 @@ import { BulleComponent } from "./bulle/bulle.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewChecked{
   title = 'Hotel';
-
+  
+  @ViewChild('scrollable') private scrollable: ElementRef | undefined;
   listeMessage: Array<[string, number]> = [];
 
   ngOnInit(): void {
@@ -22,8 +23,15 @@ export class AppComponent implements OnInit{
   }
 
   myOuputData(event: any){
-    console.log(event);
     this.listeMessage.push([event.texte,1]);
+  }
+  
+  // Cette méthode s'assure que l'on fait défiler le conteneur vers le bas après chaque ajout de message
+  ngAfterViewChecked() {
+    if (this.scrollable) {
+      const scrollableElement = this.scrollable.nativeElement;
+      scrollableElement.scrollTop = scrollableElement.scrollHeight;
+    }
   }
 
 }
