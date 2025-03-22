@@ -1,12 +1,12 @@
 :root {
     --noir: #2e2b28;
     --blanc: #e0dbd2;
-    --marron: #b64e32;
-    --marron-fonce: #531a0b ;
+    --marron: #3d8791;
+    --marron-fonce: #0f0b53 ;
 }
 
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url("assets/background.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/background.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
