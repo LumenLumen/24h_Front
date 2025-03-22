@@ -22,7 +22,6 @@ export class AppComponent implements OnInit{
   }
 
   myOuputData(event: any){
-    console.log(event);
     this.listeMessage.push([event.texte,1]);
   }
 
