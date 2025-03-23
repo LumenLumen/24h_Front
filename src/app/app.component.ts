@@ -5,6 +5,7 @@ import { ZoneInputComponent } from "./zone-input/zone-input.component";
 import { CommonModule } from '@angular/common';
 import { BulleComponent } from "./bulle/bulle.component";
 import { AgentAPIService } from './service/agent-api.service';
+import { Reponse } from './models/reponse';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +27,13 @@ constructor(private agentService: AgentAPIService) {}
 
   myOuputData(event: any){
     console.log(event);
+    let agentReponse: Reponse
     this.listeMessage.push([event.texte,1]);
     this.agentService.postMessage({message: event.texte}).subscribe(
       response => {
         console.log('Success:', response);
+        agentReponse = response as Reponse;
+        this.listeMessage.push([agentReponse.reponse,0]);
       },
       error => {
         console.error('Error:', error);
