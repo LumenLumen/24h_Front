@@ -6,6 +6,11 @@
       <app-bulle id="droite" *ngIf="message[1]" texte={{message[0]}}></app-bulle>
     </div>
   </div>
+
+  <div *ngIf="isLoading">
+    <img src="assets/spinner.gif" alt="spinner">
+  </div>
+
 </div>
 
 <div id="input"><app-zone-input (outputData)="myOuputData($event)"></app-zone-input></div>

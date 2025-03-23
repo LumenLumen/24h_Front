@@ -3,4 +3,28 @@
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <input type="text" name="texte" ngModel required>
     </form>
+
+    <div id="suggestion">
+        <p>Suggestions :</p>
+        <ul>
+            <li (click)="demanderEnregistrement(loginForm)">
+                S'enregistrer comme client
+            </li>
+            <li (click)="demanderInfoSPA(loginForm)">
+                Informations SPA
+            </li>
+            <li (click)="demanderInfoRestaurants(loginForm)">
+                Information restaurants
+            </li>
+            <li (click)="demanderReserver(loginForm)">
+                Réserver
+            </li>
+            <li (click)="demanderMeteo(loginForm)">
+                Météo
+            </li>
+            <li (click)="demanderTourisme(loginForm)">
+                Tourisme
+            </li>
+        </ul>
+    </div>
 </div>

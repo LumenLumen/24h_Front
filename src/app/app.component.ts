@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { BulleComponent } from "./bulle/bulle.component";
 import { AgentAPIService } from './service/agent-api.service';
 import { Reponse } from './models/reponse';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -19,27 +20,33 @@ export class AppComponent implements OnInit, AfterViewChecked{
 
   listeMessage: Array<[string, number, string]> = [];
 
-constructor(private agentService: AgentAPIService) {}
+  constructor(private agentService: AgentAPIService, private http: HttpClient) {}
 
   @ViewChild('scrollable')
   private scrollContainer!: ElementRef;
+  isLoading = false;  // Variable qui gère l'état de chargement
   
   ngOnInit(): void {
       this.listeMessage.push(["Bonjour, je suis Epp, votre agent réceptionniste. Que puis-je faire pour vous ?", 0, ""]);
   }
 
   myOuputData(event: any){
-    console.log(event);
     let agentReponse: Reponse
     this.listeMessage.push([event.texte,1, ""]);
+
+    //APPEL AU SERVEUR
+    this.isLoading = true;  // Affiche le spinner
     this.agentService.postMessage({message: event.texte}).subscribe(
       response => {
+        this.isLoading = false;
         console.log('Success:', response);
         agentReponse = response as Reponse;
         this.listeMessage.push([agentReponse.reponse, 0, agentReponse.emotion]);
+        
       },
       error => {
         console.error('Error:', error);
+        this.isLoading = false;
       }
     );
   }
