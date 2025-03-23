@@ -16,3 +16,21 @@ div {
     border: 2px solid var(--marron);
     padding-bottom: 10px;
 }
+
+ul {
+    list-style-type: none;  /* Supprime les puces de la liste */
+    padding: 0;  /* Supprime le padding par défaut */
+    margin: 0;  /* Supprime la marge par défaut */
+    display: flex;  /* Utilise flexbox pour afficher les éléments en ligne */
+}
+
+li {
+    margin-right: 30px;  /* Espacement entre les éléments de la liste */
+    cursor: pointer;  /* Change le curseur de la souris quand on survole l'élément */
+}
+
+#suggestion {
+    position: relative;
+    top: -10px;
+    border: none;
+}

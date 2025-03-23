@@ -1,6 +1,10 @@
-p {
+pre {
     color: var(--marron-fonce);
     padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;  /* Les retours à la ligne sont préservés, mais le texte se casse automatiquement */
+    word-wrap: break-word;  /* Permet au texte de se casser et d'éviter le débordement */
+    text-align: justify;
 }
 
 div {
@@ -8,4 +12,5 @@ div {
     border-radius: 50px;
     border: 3px solid var(--marron) ;
     width: fit-content;
+    white-space: pre-line;
 }
