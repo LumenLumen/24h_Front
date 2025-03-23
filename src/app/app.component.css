@@ -26,6 +26,25 @@
     margin-right: 0;
 }
 
+#sticky {
+    position:fixed;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+}
+
 img {
     max-width: 50px;
+}
+
+a {
+    color: var(--marron-fonce);
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid var(--marron-fonce);
+    background-color: var(--blanc);
+}
+
+a:hover {
+    color: var(--marron);
 }
